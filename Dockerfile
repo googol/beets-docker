@@ -28,4 +28,4 @@ COPY beets.config.yaml /home/app/.config/beets/config.yaml
 
 USER 1500:150
 
-CMD "/bin/bash"
+CMD "sleep infinity"
