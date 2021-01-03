@@ -9,6 +9,7 @@ RUN addgroup --system app --gid 150 && \
     touch "/config/config.yaml" && \
     apt-get update && \
     apt-get install -y \
+        nodejs \
         python3 \
         python3-pip \
         python3-dev \
@@ -25,7 +26,8 @@ RUN addgroup --system app --gid 150 && \
         pylast
 
 COPY beets.config.yaml /home/app/.config/beets/config.yaml
+COPY index.js /home/app/
 
 USER 1500:150
 
-CMD "sleep infinity"
+CMD "node /home/app/index.js"
