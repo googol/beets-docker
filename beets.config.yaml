@@ -1,3 +1,4 @@
 library: "/database/library.db"
 directory: "/library"
-include: "/config/config.yaml"
+include:
+  - "/config/config.yaml"
