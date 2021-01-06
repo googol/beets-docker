@@ -36,4 +36,4 @@ COPY --chown=1500:150 index.js /home/app/
 
 USER 1500:150
 
-CMD ["node", "/home/app/index.js"]
+ENTRYPOINT ["node", "/home/app/index.js", "--"]
