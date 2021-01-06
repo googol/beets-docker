@@ -30,4 +30,4 @@ COPY index.js /home/app/
 
 USER 1500:150
 
-CMD "node /home/app/index.js"
+CMD ["node", "/home/app/index.js"]
