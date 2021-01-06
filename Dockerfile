@@ -2,12 +2,15 @@ FROM debian:buster-slim
 
 RUN addgroup --system app --gid 150 && \
     adduser --system --ingroup app --shell /bin/bash --uid 1500 app && \
-    mkdir -p /home/app/.config/beets && \
-    chown -R 1500:150 /home/app/.config && \
     mkdir -p /database && \
+    touch /database/state.pickle && \
+    chown -R 1500:150 /database && \
     mkdir -p /library && \
     mkdir -p /config && \
-    touch "/config/config.yaml" && \
+    touch /config/config.yaml && \
+    mkdir -p /home/app/.config/beets && \
+    ln -s /database/state.pickle /home/app/.config/beets/state.pickle && \
+    chown -R 1500:150 /home/app/.config && \
     apt-get update && \
     apt-get install -y \
         nodejs \
