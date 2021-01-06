@@ -13,6 +13,7 @@ RUN addgroup --system app --gid 150 && \
         python3 \
         python3-pip \
         python3-dev \
+        python3-gi \
         git \
         gstreamer1.0-plugins-bad \
         gstreamer1.0-plugins-base \
